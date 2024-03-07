@@ -1,0 +1,18 @@
+#! clean build test run -OK
+
+name: math.xtensor
+parent: base
+
+profile:
+- name: base
+  inc: x/include xtl/include
+  sub: |
+      xtensor&x(https://github.com/xtensor-stack/xtensor)
+      xtl&xtl(https://github.com/xtensor-stack/xtl)
+  test: test.cpp
+
+- name: simd
+  parent: base
+  sub: xsimd&xsimd(https://github.com/xtensor-stack/xsimd)
+  inc: xsimd/include
+  arg: -DXTENSOR_USE_XSIMD=1
