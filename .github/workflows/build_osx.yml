@@ -16,4 +16,4 @@ jobs:
       run: |
         curl -Lo mkn https://github.com/mkn/mkn/releases/download/latest/mkn_osx
         chmod +x mkn
-        KLOG=3 ./mkn clean build test run -dtOa "-std=c++17 -fPIC"
+        KLOG=3 ./mkn clean build test -dtOa "-std=c++17 -fPIC"
